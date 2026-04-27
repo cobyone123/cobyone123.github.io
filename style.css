@@ -39,9 +39,9 @@ body {
 }
 
 .sidebar img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 70%;
     object-fit: cover;
     border: 3px solid var(--accent);
     margin-bottom: 0.5rem;
@@ -103,7 +103,7 @@ main {
 
 section {
     max-width: 720px;
-    min-height: 100vh;
+    min-height: 50vh;
     padding: 5rem 4rem;
     border-bottom: 1px solid var(--border);
 }
@@ -221,53 +221,59 @@ footer {
 
 @media (max-width: 768px) {
 
+    :root {
+        --sidebar-w: 150px;
+    }
+
     .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 1.25rem;
-        gap: 1rem;
+        padding: 1rem 0.5rem;
     }
 
     .sidebar img {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
 
-    .sidebar h1 { font-size: 1rem; }
+    .sidebar h1 { 
+        font-size: 0.8rem; 
+        margin: 0;
+    }
 
-    .sidebar-tagline { display: none; }
+    .sidebar-tagline { 
+        display: none; 
+    }
 
     .sidebar nav ul {
-        flex-direction: row;
-        gap: 0.5rem;
-        justify-content: center;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin: 0;
     }
 
     .sidebar nav a {
-        border-left: none;
-        border-bottom: 2px solid transparent;
-        padding: 0.4rem 0.75rem;
+        border-left: 2px solid transparent;
+        border-bottom: none;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.7rem;
     }
 
     .sidebar nav a:hover {
-        border-left-color: transparent;
-        border-bottom-color: var(--accent);
+        border-left-color: var(--accent);
+        border-bottom-color: transparent;
     }
 
     main {
-        margin-left: 0;
+        margin-left: var(--sidebar-w);
     }
 
     section {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1rem;
         min-height: auto;
     }
 
     section h2 { font-size: 1.8rem; }
 
-    footer { padding: 1.5rem; }
+    footer { 
+        padding: 1rem; 
+        font-size: 0.7rem;
+    }
 }
