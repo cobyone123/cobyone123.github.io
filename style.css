@@ -41,7 +41,7 @@ body {
 .sidebar img {
     width: 200px;
     height: 200px;
-    border-radius: 70%;
+    border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--accent);
     margin-bottom: 0.5rem;
@@ -102,7 +102,7 @@ main {
 }
 
 section {
-    max-width: 720px;
+    max-width: 2500px;
     min-height: 50vh;
     padding: 5rem 4rem;
     border-bottom: 1px solid var(--border);
