@@ -1,14 +1,14 @@
 :root {
     --sidebar-bg:   #2b2b2b;
     --sidebar-w:    240px;
-    --page-bg:      #e8e8e8;
-    --main-bg:      #f0efed;
+    --page-bg:      #8f8f8f;
+    --main-bg:      #c2c2c2;
     --text-dark:    #1a1a1a;
     --text-mid:     #555;
     --text-light:   #888;
     --accent:       #8a7f72;
     --border:       rgba(0,0,0,0.1);
-    --card-bg:      #ffffff;
+    --card-bg:      #dddddd;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
