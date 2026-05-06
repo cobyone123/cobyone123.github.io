@@ -8,7 +8,7 @@
     --text-light:   #888;
     --accent:       #8a7f72;
     --border:       rgba(0,0,0,0.1);
-    --card-bg:      #dddddd;
+    --card-bg:      #e8e8e8;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,8 +39,8 @@ body {
 }
 
 .sidebar img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--accent);
@@ -222,7 +222,7 @@ footer {
 @media (max-width: 768px) {
 
     :root {
-        --sidebar-w: 150px;
+        --sidebar-w: 130px;
     }
 
     .sidebar {
