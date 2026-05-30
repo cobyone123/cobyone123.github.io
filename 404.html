@@ -21,11 +21,13 @@
             <br>
         <button onclick="window.history.back()">Go Back</button>
     </section>
+
     <script>
-        if (!window.location.pathname.endsWith('/error.html')) {
-            window.location.replace('/error.html');
-        }
+        // Optional: Redirect to error.html after 3 seconds
+        // setTimeout(() => {
+        //     window.location.href = '/error.html';
+        // }, 3000);
     </script>
+    
 </body>
 </html>
-
