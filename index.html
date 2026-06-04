@@ -53,10 +53,81 @@
                 <span class="section-label">03 — Contact</span>
                 <h2>Get in Touch</h2>
                 <p>Interested in working together? Reach out below.</p>
-                <a href="mailto:cobyone12345@gmail.com" class="contact-link">cobyone12345@gmail.com</a>
-                <br>
-                <a href="tel:+12084311445" class="contact-link">(208) 431-1445</a>
-            </section>
+                
+                <div class="contact-form-wrap">
+                    <form class="contact-form" id="contactForm" onsubmit="sendEmail(event)">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Name</label>
+                                <br>
+                                <input type="text" name="user_name" placeholder="Your full name" required>
+                            </div>
+                            <br>
+                            <div class="form-field">
+                                <label>Email</label>
+                            <br>
+
+                                <input type="email" name="user_email" placeholder="your@email.com" required>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="form-field">
+                            <label>Phone <span class="optional">(optional)</span></label>
+                            <br>
+                            <input type="tel" name="user_phone" placeholder="(208) 555-0000">
+                        </div>
+                        <br>
+                        <div class="form-field">
+                            <label>Message</label>
+                            <br>
+                            <textarea rows="4" name="user_message" placeholder="Input text here" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+            <script>
+            async function sendEmail(event) {
+                event.preventDefault();
+
+                const form = document.getElementById('contactForm');
+                const submitBtn = form.querySelector('button[type="submit"]');
+
+                const payload = {
+                    user_name: form.user_name.value,
+                    user_email: form.user_email.value,
+                    user_phone: form.user_phone.value,
+                    user_message: form.user_message.value
+                };
+
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                try {
+                    const response = await fetch('/.netlify/functions/send-email', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        submitBtn.textContent = 'Message Sent!';
+                        form.reset();
+                    } else {
+                        submitBtn.textContent = 'Failed — Try Again';
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    submitBtn.textContent = 'Error — Try Again';
+                    submitBtn.disabled = false;
+                }
+            }
+            </script>
 
             <footer>
                 <p>&copy; 2026 Coby Garner</p>
