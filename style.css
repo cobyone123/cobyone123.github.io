@@ -299,6 +299,16 @@ footer {
 
 @media (max-width: 768px) {
 
+    button {
+    background: var(--text-light);
+    font-family: 'Lato', sans-serif;
+    color: var(--card-bg);
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
     :root {
         --sidebar-w: 130px;
     }
