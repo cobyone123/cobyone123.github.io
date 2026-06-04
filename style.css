@@ -276,6 +276,7 @@ section li {
     width: 100%;
     font-family: 'Lato', sans-serif;
     font-size: 0.95rem;
+    resize: none;
 }
 
 #contact input:focus,
@@ -355,7 +356,14 @@ footer {
         font-size: 1.8rem;
      }
 
-   
+    #contact input:focus,
+    #contact textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        background-color: var(--text-light);
+        resize: none;
+    }
+
     footer { 
         padding: 1rem; 
         font-size: 0.7rem;
